@@ -1,0 +1,469 @@
+<!-- 헤더 부분 -->
+
+    <div class="menu">
+        <div class="container">
+        	<div class="row subBut">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div id="imaginary_container"> 
+                    
+                    <form>
+                        <div class="input-group stylish-input-group">
+                            <input type="text" class="form-control"  placeholder="Search" id="search" name="q" >
+                            <span class="input-group-addon search_but">
+                                
+                                    <span class="glyphicon glyphicon-search"></span>
+                                  
+                            </span>
+                        </div>
+                    </form>
+                    </div>
+                    
+                    <ul class="list-group search_group">
+                        <% @searches.each do |p| %>
+                        
+                          <li class="list-group-item buttons listinfo" name="<%= p.St_code %>"><%= p.Title_info %></li>
+                        <% end %>  
+                    </ul>
+                    
+                </div>
+        	</div>
+        </div>
+    </div>
+
+<!-- 헤더 부분 종료 -->
+
+<!-- 지도 부분 -->
+
+    <div class="imageHolder">
+        <div data-elem="pinchzoomer" data-options="scaleMode:full; initX:0.468; initY:0.5; " > 
+        	<img src="../assets/lineS.jpg" id="line" data-elem="bg/"  alt="line" usemap="#line" />
+        	
+        	<map name="line">
+        	    <area shape="circle"class="buttons"   name="0260" alt="까치산" title="" coords="704,722,12" target="" />
+        	    <area shape="circle" class="buttons"  name="0249" alt="신정네거리" title="" coords="704,793,12" target="" />
+                <area shape="circle" class="buttons"  name="0248" alt="양천구청" title="" coords="704,874,12" target="" />
+                <area shape="circle" class="buttons" name="0247" alt="도림천" title="" coords="751,920,12" target="" />
+                <area shape="circle" class="buttons"  name="0234" alt="신도림" title="" coords="801,970,12" target="" />
+                <area shape="circle" class="buttons"  name="0233" alt="대림" title="" coords="871,1041,12" target="" />
+                <area shape="circle" class="buttons"  name="0232" alt="구로디지털단지" title="" coords="907,1075,12" target="" />
+                <area shape="circle" class="buttons" name="0231" alt="신대방" title="" coords="939,1108,12"  target="" />
+                <area shape="circle" class="buttons" name="0230" alt="신림" title="" coords="973,1143,12" target="" />
+                <area shape="circle" class="buttons" name="0229" alt="봉천" title="" coords="1034,1143,12"  target="" />
+                <area shape="circle" class="buttons" name="0228" alt="서울대입구" title="" coords="1104,1143,12"  target="" />
+                <area shape="circle" class="buttons" name="0227" alt="낙성대" title="" coords="1174,1144,12"  target="" />
+                <area shape="circle" class="buttons" name="0226" alt="사당" title="" coords="1243,1143,12"  target="" />
+                <area shape="circle" class="buttons" name="0225" alt="방배" title="" coords="1315,1143,12" target="" />
+                <area shape="circle" class="buttons" name="0224" alt="서초" title="" coords="1385,1143,12"  target="" />
+                <area shape="circle" class="buttons" name="0223"alt="교대" title="" coords="1439,1143,12"  target="" />
+                <area shape="circle" class="buttons" name="0222" alt="강남" title="" coords="1503,1143,12"  target="" />
+                <area shape="circle" class="buttons" name="0221" alt="역삼" title="" coords="1560,1143,12"  target="" />
+                <area shape="circle" class="buttons" name="0220" alt="선릉" title="" coords="1618,1143,12" target="" />
+                <area shape="circle" class="buttons" name="0219" alt="삼성" title="" coords="1669,1142,12" target="" />
+                <area shape="circle" class="buttons" name="0218" alt="종합운동장" title="" coords="1703,1109,12" target="" />
+                <area shape="circle" class="buttons" name="0217" alt="신천" title="" coords="1738,1073,12" target="" />
+                <area shape="circle" class="buttons" name="0216" alt="잠실" title="" coords="1770,1040,12"  target="" />
+                <area shape="circle" class="buttons" name="0215" alt="잠실나루" title="" coords="1803,1006,12"  target="" />
+                <area shape="circle" class="buttons" name="0214" alt="강변" title="" coords="1805,939,12"  target="" />
+                <area shape="circle" class="buttons" name="0213" alt="구의" title="" coords="1805,887,12"  target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0212)" name="0212" alt="건대입구" title="" coords="1805,831,12"  target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0211)" name="0211" alt="성수" title="" coords="1747,770,12"  target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0210)" name="0210" alt="뚝섬" title="" coords="1705,727,12"  target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0209)" name="0209" alt="한양대" title="" coords="1656,679,12"  target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0208)" name="0208" alt="왕십리" title="" coords="1610,634,12"  target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0207)" name="0207" alt="상왕십리" title="" coords="1569,591,12"  target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0206)"name="0206" alt="신당" title="" coords="1502,592,12"  target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0205)"name="0205" alt="동대문역사문화공원" title="" coords="1423,592,12" target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0204)" name="0204" alt="을지로4가" title="" coords="1341,591,12"  target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0203)" name="0203" alt="을지로3가" title="" coords="1256,591,12"  target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0202)" name="0202" alt="을지로입구" title="" coords="1193,592,12"  target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0201)" name="0201" alt="시청" title="" coords="1130,591,12" target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0243)" name="0243" alt="충정로" title="" coords="1063,593,12" target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0242)" name="0242" alt="아현" title="" coords="1004,592,12" target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0241)" name="0241" alt="이대" title="" coords="948,592,12"  target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0240)" name="0240" alt="신촌" title="" coords="889,592,12"  target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0239)" name="0239" alt="홍대입구" title="" coords="849,633,12"  target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0238)" name="0238" alt="합정" title="" coords="803,677,12" target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0237)" name="0237" alt="당산" title="" coords="804,740,12" target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0236)" name="0236" alt="영등포구청" title="" coords="804,812,12"  target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0235)" name="0235" alt="문래" title="" coords="804,887,12" target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0244)" name="0244" alt="용답" title="" coords="1750,704,12"  target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0245)" name="0245" alt="신답" title="" coords="1750,647,12"  target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0250)" name="0250" alt="용두" title="" coords="1697,593,12"  target="" />
+                <area shape="circle" class="buttons" onclick="onClickbut(0246)" name="0246" alt="신설동" title="" coords="1646,544,12"  target="" />
+        	</map>
+        	
+        	
+        <!--	<img src="../assets/lineS.jpg" id="line" data-elem="pinchzoomer" data-options="scaleMode:full; initX:0.468; initY:0.5; " alt="line" usemap="#line"/>
+        	<img src="../assets/lineB.png" data-elem="bg/"/> -->
+        	
+        	
+        	<div data-src="../assets/icon/back.png"  name="0260" class="marker textmap" data-elem="marker" data-options="x:615; y:730; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0260.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0249" class="marker textmap" data-elem="marker" data-options="x:615; y:800; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0249.each do |p| %><%= p.Title_info %><% end %></div>  
+        	
+        	<div data-src="../assets/icon/back.png" name="0248" class="marker textmap" data-elem="marker" data-options="x:615; y:880; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0248.each do |p| %><%= p.Title_info %><% end %></div> 
+        	
+        	<div data-src="../assets/icon/back.png" name="0247" class="marker textmap" data-elem="marker" data-options="x:675; y:930; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0247.each do |p| %><%= p.Title_info %><% end %></div> 
+        	
+        	<div data-src="../assets/icon/back.png" name="0234" class="marker textmap" data-elem="marker" data-options="x:820; y:960; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0234.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0233" class="marker textmap" data-elem="marker" data-options="x:860; y:1000; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0233.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0232" class="marker textmap" data-elem="marker" data-options="x:930; y:1065; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0232.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0231" class="marker textmap" data-elem="marker" data-options="x:960; y:1095; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0231.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0230" class="marker textmap" data-elem="marker" data-options="x:960; y:1160; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0230.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0229" class="marker textmap" data-elem="marker" data-options="x:1025; y:1115; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0229.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0228" class="marker textmap" data-elem="marker" data-options="x:1095; y:1160; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0228.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0227" class="marker textmap" data-elem="marker" data-options="x:1160; y:1115; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0227.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0226" class="marker textmap" data-elem="marker" data-options="x:1230; y:1160; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0226.each do |p| %><%= p.Title_info %><% end %></div>
+
+        	<div data-src="../assets/icon/back.png" name="0225" class="marker textmap" data-elem="marker" data-options="x:1300; y:1115; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0225.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0224" class="marker textmap" data-elem="marker" data-options="x:1380; y:1160; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0224.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0223" class="marker textmap" data-elem="marker" data-options="x:1390; y:1115; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0223.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png"  name="0222" class="marker textmap" data-elem="marker" data-options="x:1490; y:1160; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0222.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0221" class="marker textmap" data-elem="marker" data-options="x:1550; y:1115; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0221.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0220" class="marker textmap" data-elem="marker" data-options="x:1600; y:1160; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0220.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0219" class="marker textmap" data-elem="marker" data-options="x:1680; y:1135; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0219.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0218" class="marker textmap" data-elem="marker" data-options="x:1715; y:1100; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0218.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0217" class="marker textmap" data-elem="marker" data-options="x:1750; y:1065; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0217.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0216" class="marker textmap" data-elem="marker" data-options="x:1785; y:1030; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0216.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0215" class="marker textmap" data-elem="marker" data-options="x:1820; y:995; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0215.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0214" class="marker textmap" data-elem="marker" data-options="x:1820; y:930; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0214.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0213" class="marker textmap" data-elem="marker" data-options="x:1820; y:875; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0213.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0212" class="marker textmap" data-elem="marker" data-options="x:1820; y:820; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0212.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0211" class="marker textmap" data-elem="marker" data-options="x:1765; y:760; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0211.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0244" class="marker textmap" data-elem="marker" data-options="x:1765; y:695; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0244.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0245" class="marker textmap" data-elem="marker" data-options="x:1765; y:640; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0245.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0250" class="marker textmap" data-elem="marker" data-options="x:1710; y:580; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0250.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0246" class="marker textmap" data-elem="marker" data-options="x:1660; y:535; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0246.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0210" class="marker textmap" data-elem="marker" data-options="x:1630; y:740; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0210.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0209" class="marker textmap" data-elem="marker" data-options="x:1670; y:660; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0209.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0208" class="marker textmap" data-elem="marker" data-options="x:1620; y:620; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0208.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0207" class="marker textmap" data-elem="marker" data-options="x:1580; y:580; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0207.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0206" class="marker textmap" data-elem="marker" data-options="x:1500; y:600; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0206.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0205" class="marker textmap" data-elem="marker" data-options="x:1410; y:560; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0205.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0204" class="marker textmap" data-elem="marker" data-options="x:1330; y:600; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0204.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0203" class="marker textmap" data-elem="marker" data-options="x:1260; y:560; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0203.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0202" class="marker textmap" data-elem="marker" data-options="x:1185; y:600; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0202.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0201" class="marker textmap" data-elem="marker" data-options="x:1135; y:560; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0201.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0243" class="marker textmap" data-elem="marker" data-options="x:1055; y:600; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0243.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0242" class="marker textmap" data-elem="marker" data-options="x:1000; y:560; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0242.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0241" class="marker textmap" data-elem="marker" data-options="x:940; y:600; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0241.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0240" class="marker textmap" data-elem="marker" data-options="x:880; y:560; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0240.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0239" class="marker textmap" data-elem="marker" data-options="x:860; y:625; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0239.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0238" class="marker textmap" data-elem="marker" data-options="x:820; y:665; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0238.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0237" class="marker textmap" data-elem="marker" data-options="x:820; y:730; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0237.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0236" class="marker textmap" data-elem="marker" data-options="x:820; y:810; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0236.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	<div data-src="../assets/icon/back.png" name="0235" class="marker textmap" data-elem="marker" data-options="x:820; y:860; transformOrigin:50% 100%; maxZoom:2.5" >
+        	<% @s0235.each do |p| %><%= p.Title_info %><% end %></div>
+        	
+        	
+        	
+        	
+    	</div>
+    </div>
+
+<!-- 지도 부분 종료 -->
+
+<!-- 전환 버튼 부분 -->
+
+<img src="../assets/icon/sync.png" id="sync"/>
+<img src="../assets/icon/location.png" id="local"/>
+
+<!-- 전환 버튼 부분 종료 -->
+
+<!-- 스크립트 -->
+<script >
+    
+    $(document).ready(function(){
+        $('.search_group').hide();
+        $('.listinfo').hide();
+    })
+    var bools =true;
+    $('.search_but').click(function(){
+        var search_info = $('#search').val();
+        
+        if( bools == true){
+            for(var x = 1 ; x<300 ; x++){
+                
+                if($('li:nth-child('+x+')').text().indexOf(search_info) != -1){
+                    $('li:nth-child('+x+')').show();
+                };
+            };
+            
+            
+             $('.search_group').show(); 
+             bools = false;
+        }else{
+            for(var x = 1 ; x<300 ; x++){
+                
+                
+                    $('li:nth-child('+x+')').hide();
+                
+            };
+            $('.search_group').hide();
+            bools = true;
+        }
+    })
+    
+    /* 좌표 추출 */
+    
+    $("#local").click(function(){
+        $(function() {        
+      
+            if (navigator.geolocation) {
+               
+                navigator.geolocation.getCurrentPosition (function(pos) {
+                    var wido = pos.coords.latitude;     // 위도
+                    var kudo = pos.coords.longitude; // 경도
+                    /*
+                    $.ajax({
+                        url : "https://swopenapi.seoul.go.kr/api/subway/6f6a4e4f7067757238376156727172/xml/nearBy/0/1/"+wido+"/"+kudo,
+                        type : "GET",
+                        success : function(xml){
+                            $(xml).find("row").each(function(){
+                                
+                               alert( $(this).find('statnNM').text());
+                            })
+                        }
+                
+                    });
+                    */
+                    alert( "[현재위치]  위도 : " + wido + "경도 : " + kudo );
+                    alert( "인근에 가까운 역이 없습니다.");
+                })
+                
+                    
+                
+            } else {
+                alert("이 브라우저에서는 Geolocation이 지원되지 않습니다.")
+            }
+        });
+    })
+    
+    
+    /* 검색 기능 종료 */
+
+    $('#sync').mouseenter(function(){
+       $('#sync').attr("src","../assets/icon/syncO.png"); 
+    });
+    $('#sync').mouseleave(function(){
+       $('#sync').attr("src","../assets/icon/sync.png"); 
+    });
+    $('#sync').mousedown(function(){
+       $('#sync').attr("src","../assets/icon/syncP.png"); 
+    });
+    $('#sync').mouseup(function(){
+       $('#sync').attr("src","../assets/icon/syncO.png"); 
+    });
+
+    $('#sync').click(function(){
+        var src = ($("#line").attr('src') === "../assets/lineS.jpg")
+            ? "../assets/lineSO.jpg" : "../assets/lineS.jpg" ;
+        
+            $('#line').attr("src",src);
+           
+        
+    });
+    
+    /* 버튼 클릭하면 해당 정보 가져오기*/
+    var indexnum
+    var indextitle
+    $('.buttons').click(function(){
+       indexnum = $(this).attr("name"); 
+       
+        window.location.href = "info.html?="+indexnum;
+    });
+    
+    
+    
+    /*-- textmap fade toggle --*/
+    $('#sync').click(function(){
+            $('.textmap').fadeToggle(1,"linear");
+        });
+        
+        
+        
+    /* change touch event to click event */
+        (function() {
+     var isTouch = false;
+     var simulated_flag = 'handler_simulated';
+     var touch_click_array = {};
+     const clickMoveThreshold = 20; //Pixels
+    
+     function mouseHandler(event) {
+      if (isTouch) {
+       if (!event.hasOwnProperty(simulated_flag)) {
+        //Unreliable mouse commands - In my opinion
+        var fixed = new jQuery.Event(event);
+        fixed.preventDefault();
+        fixed.stopPropagation();
+        }
+       } else {
+       //Mouse commands are consistent
+       //TODO: generate corresponding touches
+      }
+     }
+    
+     function mouseFromTouch(type, touch) {
+      var event = document.createEvent("MouseEvent");
+      event.initMouseEvent(type, true, true, window, 1, touch.screenX, touch.screenY, touch.clientX, touch.clientY
+      , false, false, false, false, 0, null);
+      event[simulated_flag] = true;
+    
+      touch.target.dispatchEvent(event);
+     };
+    
+     function touchHandler(event) {
+      var touches = event.changedTouches
+      ,first = touches[0]
+      ,type = ""
+    
+      if (!event.hasOwnProperty(simulated_flag)) {
+       isTouch = true;
+    
+       //Simulate mouse commands
+       switch (event.type) {
+       case "touchstart":
+        for (var i = 0; i < touches.length; i++) {
+         var touch = touches[i];
+         touch_click_array[touch.identifier] = { x: touch.screenX, y: touch.screenY };
+        }
+        mouseFromTouch("mousedown", first);
+        break;
+       case "touchmove":
+        for (var i = 0; i < touches.length; i++) {
+         var touch = touches[i];
+         var id = touch.identifier;
+         var data = touch_click_array[id];
+         if (data !== undefined) {
+          if (Math.abs(data.x - touch.screenX) + Math.abs(data.y - touch.screenY) > clickMoveThreshold) {
+           delete touch_click_array[id];
+          }
+         }
+        }
+        mouseFromTouch("mousemove", first);
+        break;
+       case "touchcancel":
+        //Not sure what should happen here . . .
+        break;
+       case "touchend":
+        mouseFromTouch("mouseup", first);
+        for (var i = 0; i < touches.length; i++) {
+         var touch = touches[i];
+         if (touch_click_array.hasOwnProperty(touch.identifier)) {
+          mouseFromTouch("click", touch);
+          delete touch_click_array[touch.identifier];
+         }
+        }
+        break;
+       }
+      }
+     }
+    
+     document.addEventListener("mousedown", mouseHandler, true);
+     document.addEventListener("mousemove", mouseHandler, true);
+     document.addEventListener("mouseup", mouseHandler, true);
+     document.addEventListener("click", mouseHandler, true);
+    
+     document.addEventListener("touchstart", touchHandler, true);
+     document.addEventListener("touchmove", touchHandler, true);
+     document.addEventListener("touchcancel", touchHandler, true);
+     document.addEventListener("touchend", touchHandler, true);
+    })();
+    
+</script>
+<!-- 스크립트 종료 -->

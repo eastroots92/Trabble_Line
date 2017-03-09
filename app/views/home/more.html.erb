@@ -1,0 +1,48 @@
+ <div class='container'>
+    <div class='code' name='code'>null</div> 
+     <%= @code[1] %>
+     
+     <% @subinfo.each do |p| %>
+            <li class="list-group-item">
+                
+                <span  class="badge likeAjax" name="<%= p.id%>"><span  class="badge"><%= p.Title_like %></span></span>
+                
+                [ <%=p.created_at%> ] <br> <%= p.Title_info %>
+                
+                
+            </li>
+    <% end %>
+    
+    
+     
+ </div>
+ 
+ 
+ 
+ <script>
+     
+     $(document).ready(function(){
+        butinfo = location.href.substr(
+            location.href.lastIndexOf('=')+ 1);
+        
+        $('.code').text(butinfo);
+        $('.code').hide();
+            
+     });
+     
+     $('.likeAjax').click(function(){
+        var idnum = $(this).attr("name");
+        
+       $.ajax({
+           method: "GET" ,
+           url: "like/"+idnum 
+       })
+       .done(function(){
+           
+           location.reload();
+       })
+       
+    });
+     
+     
+ </script>

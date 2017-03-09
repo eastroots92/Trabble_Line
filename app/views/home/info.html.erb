@@ -1,0 +1,197 @@
+<!-- 헤더 부분 -->
+
+    <div class="menu">
+        <div class="container">
+        	<div class="row">
+                <div class="col-sm-2 col-xs-4" >
+                    <a href="/home/trabble" class="btn btn-default infobut" id="back_main" role="button"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true">Back</span></a>
+                </div>
+                
+                <div class="col-sm-8 col-xs-4 " >
+                    <h5 class="station_title">신촌 사거리</h5>
+                </div>
+                
+                
+                <div class="col-sm-2 col-xs-4" >
+                    <a  class="btn btn-default infobut" id="info_main" role="button"> <span class="glyphicon glyphicon-info-sign" aria-hidden="true"> Info</span></a>
+                </div>
+        	</div>
+        </div>
+    </div>
+
+<!-- 헤더 부분 종료 -->
+
+
+<!-- Main part start -->
+<div class="container">
+    <div class="col-xs-8 col-xs-offset-2">
+        
+        <div class="alert alert-success infoTitle" role="alert">
+            <div class="infoTitle2" >
+                <div>
+                    <% @Hsubinfo.each do |p| %>
+                
+                    
+                    <%= p.Title_info %>
+                    
+                    <!--h4>사람 많음 조심</h4-->
+                    <hr>
+                    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" href="home/like/<%= p.id %>"></span><span> = <%= p.Title_like %> </span> 
+                
+                    <% end %> 
+                    
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+    
+    
+    <div class="inputTitle">
+            <h4 class="station_Now"> 역은 지금..?</h4> 
+            <form action="/home/write" method="POST" >
+                <div class="input-group">
+                    <input type="text" class="form-control" id="info_title" name="info_title" placeholder="ex. 26일 촛불 시위 중">
+                    <input type="text" class="form-control" id="info_sub" name="info_sub" value="안녕" >
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">등록하기</button>
+                    </span>
+                </div>  
+            </form>
+    </div>
+   
+    <div class="subTitle">
+        <ul class="nav nav-tabs">
+            <li role="presentation"id="best" class="active"><a >Best</a></li>
+            <li role="presentation"id="new"><a >New</a></li>
+            <!--<li role="presentation"id="food"><a >Food</a></li>-->
+        </ul>
+        
+        <ul id="Tbest"class="list-group ">
+            
+            <% @Bsubinfo.each do |p| %>
+                <li class="list-group-item">
+                   <span  class="badge likeAjax" name="<%= p.id%>"><span  class="badge"><%= p.Title_like %></span></span>
+                    <%= p.Title_info %>
+                   
+                    
+                </li>
+            <% end %> 
+          
+        </ul>
+        
+        <ul id="Tnew" class ="list-group">
+        
+            <% @Nsubinfo.each do |p| %>
+                <li class="list-group-item">
+                    <span  class="badge likeAjax" name="<%= p.id%>"><span  class="badge"><%= p.Title_like %></span></span>
+                    <%= p.Title_info %>
+                    
+                    
+                </li>
+            <% end %> 
+           
+            
+        </ul>
+        
+        
+    </div>
+
+
+
+    
+</div>
+
+
+<!-- Main part fin -->
+
+
+<!-- 스크립트 -->
+<script>
+    var lineinfo
+    var CD
+    var NM
+    
+
+    
+    
+    $(document).ready(function(){
+        
+        butinfo = location.href.substr(
+            location.href.lastIndexOf('=')+ 1);
+       
+        
+        $.ajax({
+            url : "../line2.xml",
+            type : "GET",
+            success : function(xml){
+                $(xml).find("row").each(function(){
+                    
+                    if( $(this).find('STATION_CD').text() == butinfo){
+                        CD = $(this).find('STATION_CD').text();
+                        NM = $(this).find('STATION_NM').text();
+                        $('.station_title').text(NM +" 역");
+                        $('.station_Now').text(NM +"역은 지금..?");
+                        $('#info_sub').attr("value",butinfo);
+                        $('#info_sub').hide();
+                        $('#Tnew').hide();
+                    }
+                });
+                
+            }
+        })
+        
+        
+            
+        
+        
+        
+    });
+    
+    $('.likeAjax').click(function(){
+        var idnum = $(this).attr("name");
+        
+       $.ajax({
+           method: "GET" ,
+           url: "like/"+idnum 
+       })
+       .done(function(){
+           
+           location.reload();
+       })
+       
+    });
+    
+    $('#info_main').click(function(){
+       window.location.href = "more.html?="+butinfo; 
+    });
+    
+    $('#back_main').click(function() {
+                location.reload();
+    });
+    
+    $('#new').click(function(){
+       $('#new').attr('class','active');
+       $('#food').attr('class',null);
+       $('#best').attr('class',null);
+       $('#Tbest').hide();
+       $('#Tnew').show();
+    });
+    $('#food').click(function(){
+       $('#food').attr('class','active');
+       $('#new').attr('class',null);
+       $('#best').attr('class',null);
+    });
+    $('#best').click(function(){
+       $('#best').attr('class','active');
+       $('#new').attr('class',null);
+       $('#food').attr('class',null);
+       $('#Tnew').hide();
+       $('#Tbest').show();
+    });
+    
+    
+
+</script>
+<!-- 스크립트 종료 -->
